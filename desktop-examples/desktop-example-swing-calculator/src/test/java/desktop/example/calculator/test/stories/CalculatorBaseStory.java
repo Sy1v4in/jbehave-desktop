@@ -14,7 +14,7 @@ import org.jbehave.core.steps.ParameterConverters;
 
 import desktop.example.calculator.test.steps.CalculatorSteps;
 
-public class CalculatorBaseStory extends JUnitStory {
+public abstract class CalculatorBaseStory extends JUnitStory {
 
 	// Here we specify the configuration, starting from default
 	// MostUsefulConfiguration, and changing only what is needed

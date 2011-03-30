@@ -106,6 +106,9 @@
 								<phase>integration-test</phase>
 								<configuration>
 									<scope>test</scope>
+									<excludes>
+										<exclude>**/stories/CalculatorBaseStory.java</exclude>
+									</excludes>
 									<includes>
 										<include>**/stories/*.java</include>
 									</includes>
