@@ -1,4 +1,4 @@
-package desktop.example.calculator.test;
+package desktop.example.calculator.test.runners;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromPath;
 
@@ -18,9 +18,10 @@ import org.jbehave.core.steps.ParameterConverters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import desktop.example.calculator.test.CalculatorAnnotatedEmbedderWithSteps.MyReportBuilder;
-import desktop.example.calculator.test.CalculatorAnnotatedEmbedderWithSteps.MyStoryControls;
-import desktop.example.calculator.test.CalculatorAnnotatedEmbedderWithSteps.MyStoryLoader;
+import desktop.example.calculator.test.runners.CalculatorAnnotatedEmbedderWithSteps.MyReportBuilder;
+import desktop.example.calculator.test.runners.CalculatorAnnotatedEmbedderWithSteps.MyStoryControls;
+import desktop.example.calculator.test.runners.CalculatorAnnotatedEmbedderWithSteps.MyStoryLoader;
+import desktop.example.calculator.test.steps.CalculatorSteps;
 
 /**
  * Run stories via annotated embedder configuration and steps. Here we are only

@@ -1,4 +1,4 @@
-package desktop.example.calculator.test;
+package desktop.example.calculator.test.steps;
 
 import static org.uispec4j.assertion.UISpecAssert.assertTrue;
 
@@ -14,6 +14,7 @@ import org.uispec4j.Panel;
 import desktop.example.calculator.CalculatorPanel;
 import desktop.example.calculator.Operation;
 import desktop.example.calculator.State;
+import desktop.example.calculator.test.wraper.CalculatorWraperApplication;
 
 /**
  * Steps class for the Calculator example.
@@ -23,12 +24,12 @@ import desktop.example.calculator.State;
  */
 public class CalculatorSteps {
 
-	private CalculatorTestApplication calculatorApp;
+	private CalculatorWraperApplication calculatorApp;
 	private Panel calculatorPanel = null;
 
 	@BeforeStories
 	public void beforeStories() {
-		calculatorApp = new CalculatorTestApplication();
+		calculatorApp = new CalculatorWraperApplication();
 
 		// Must be called before anything related to UI !!!
 		calculatorApp.init();

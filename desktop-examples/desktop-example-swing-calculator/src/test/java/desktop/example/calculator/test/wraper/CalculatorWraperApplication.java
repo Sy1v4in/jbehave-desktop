@@ -1,4 +1,4 @@
-package desktop.example.calculator.test;
+package desktop.example.calculator.test.wraper;
 
 import org.jbehave.desktop.swing.AbstractSwingApplication;
 
@@ -11,9 +11,9 @@ import desktop.example.calculator.CalculatorPanel;
  * @author Cristiano Gavião
  * 
  */
-public class CalculatorTestApplication extends AbstractSwingApplication {
+public class CalculatorWraperApplication extends AbstractSwingApplication {
 
-	public CalculatorTestApplication() {
+	public CalculatorWraperApplication() {
 		super(CalculatorPanel.class, new String[0]);
 	}
 

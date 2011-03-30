@@ -13,8 +13,10 @@
 	<description>Example of using Jbehave-Destop-Swing</description>
 
 	<properties>
-		<include.annotated.embedders>**/CalculatorAnnotatedEmbedder*.java</include.annotated.embedders>
-		<annotated.embedder.runner>org.jbehave.core.junit.AnnotatedEmbedderRunner</annotated.embedder.runner>
+		<include.annotated.embedders>**/CalculatorAnnotatedEmbedder*.java
+		</include.annotated.embedders>
+		<annotated.embedder.runner>org.jbehave.core.junit.AnnotatedEmbedderRunner
+		</annotated.embedder.runner>
 	</properties>
 
 
@@ -25,6 +27,13 @@
 			<version>1.0-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jbehave</groupId>
+			<artifactId>jbehave-core</artifactId>
+			<version>${jbehave.core.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -50,7 +59,8 @@
 						<phase>integration-test</phase>
 						<configuration>
 							<scope>test</scope>
-							<annotatedEmbedderRunnerClass>${annotated.embedder.runner}</annotatedEmbedderRunnerClass>
+							<annotatedEmbedderRunnerClass>${annotated.embedder.runner}
+							</annotatedEmbedderRunnerClass>
 							<includes>
 								<include>${include.annotated.embedders}</include>
 							</includes>
@@ -70,6 +80,35 @@
 		</plugins>
 	</build>
 	<profiles>
+		<profile>
+			<id>embeddables</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jbehave</groupId>
+						<artifactId>jbehave-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>run-stories</id>
+								<phase>integration-test</phase>
+								<configuration>
+									<scope>test</scope>
+									<includes>
+										<include>**/stories/*.java</include>
+									</includes>
+								</configuration>
+								<goals>
+									<goal>run-stories-as-embeddables</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<id>jdk15</id>
 			<activation>
