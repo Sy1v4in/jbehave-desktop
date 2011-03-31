@@ -25,7 +25,6 @@
 			<groupId>org.jbehave.desktop</groupId>
 			<artifactId>jbehave-desktop-swing-uispec4j</artifactId>
 			<version>1.0-SNAPSHOT</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jbehave</groupId>
@@ -35,23 +34,6 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<systemProperties>
-						<property>
-							<name>uispec4j.test.library</name>
-							<value>junit</value>
-						</property>
-					</systemProperties>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
 	<profiles>
 		<profile>
 			<id>annotated-embedder</id>
@@ -63,10 +45,12 @@
 					<plugin>
 						<groupId>org.jbehave</groupId>
 						<artifactId>jbehave-maven-plugin</artifactId>
+						
 						<executions>
 							<execution>
 								<id>with-annotated-embedder</id>
 								<phase>integration-test</phase>
+								
 								<configuration>
 									<scope>test</scope>
 									<annotatedEmbedderRunnerClass>${annotated.embedder.runner}
